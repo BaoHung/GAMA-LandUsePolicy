@@ -18,9 +18,14 @@ global
 	file csv_price <- csv_file("../includes/csv_datasets/price.csv", false);
 	file csv_suitability <- csv_file("../includes/csv_datasets/suitability_case.csv", true);
 	file csv_transition <- csv_file("../includes/csv_datasets/transition.csv", false);
+	file csv_cost <- csv_file("../includes/csv_datasets/cost.csv", false);
+	file csv_investment <- csv_file("../includes/csv_datasets/investment.csv", false);
 	float max_salinity <- 12.0;
 	float min_salinity <- 2.0;
 	float max_price;
+	float max_cost;
+	float max_investment;
+	float max_delay;
 	map<string, rgb> color_map <- ["BHK"::# darkgreen, "LNC"::# lightgreen, "TSL"::# orange, "LNQ"::# brown, "LUC"::# lightyellow, "LUK"::# gold, "LTM"::# cyan, "LNK"::# red];
 	date starting_date <- date([2005, 1, 1, 0, 0, 0]);
 	river the_main_river;
@@ -34,12 +39,30 @@ global
 	float weight_implementation <- 0.5 parameter: true;
 	float weight_suitability <- 0.5 parameter: true;
 	float weight_neighborhood <- 0.5 parameter: true;
-	list
-	criteria <- [["name"::"profit", "weight"::weight_profit], ["name"::"risk", "weight"::weight_risk], ["name"::"implementation", "weight"::weight_implementation], ["name"::"suitability", "weight"::weight_suitability], ["name"::"neigboorhood", "weight"::weight_neighborhood]];
+	float weight_investment <- 0.5 parameter: true;
+	float weight_cost <- 0.5 parameter: true;
+	float weight_delay <- 0.5 parameter: true;
+	list criteria <- [
+		["name"::"profit", "weight"::weight_profit], 
+		["name"::"risk", "weight"::weight_risk], 
+		["name"::"implementation", "weight"::weight_implementation], 
+		["name"::"suitability", "weight"::weight_suitability], 
+		["name"::"neigboorhood", "weight"::weight_neighborhood],
+		["name"::"investment", "weight"::weight_investment],
+		["name"::"cost", "weight"::weight_cost],
+		["name"::"delay", "weight"::weight_delay]
+	];
 	float probability_changing <- 0.5 parameter: true;
 	action load_land_use
 	{
-		create land_use from: csv_lut with: [name:: get("landuse"), lu_code::get("lu_code"), average_yield_ha::float(get("avg_yield_ha")), risk::float(get("risk"))];
+		create land_use from: csv_lut with: [
+			name:: get("landuse"), 
+			lu_code::get("lu_code"), 
+			average_yield_ha::float(get("avg_yield_ha")), 
+			risk::float(get("risk")),
+			delay::float(get("delay_month"))
+		];
+		max_delay <- max (land_use accumulate (each.delay));
 	}
 
 	action load_price
@@ -57,6 +80,40 @@ global
 		}
 
 		max_price <- max(land_use accumulate (each.price_map.values));
+	}
+	
+	action load_cost
+	{
+		matrix<string> data <- csv_cost.contents;
+		loop lu_row from: 1 to: data.rows - 1
+		{
+			string lu_code <- data[0, lu_row];
+			land_use concerned <- first(land_use where (each.lu_code = lu_code));
+			loop year from: 1 to: data.columns - 1
+			{
+				add float(data[year, lu_row]) to: concerned.cost_map at: (year - 1) + 2005;
+			}
+
+		}
+
+		max_cost <- max(land_use accumulate (each.cost_map.values));
+	}
+	
+	action load_investment
+	{
+		matrix<string> data <- csv_investment.contents;
+		loop lu_row from: 1 to: data.rows - 1
+		{
+			string lu_code <- data[0, lu_row];
+			land_use concerned <- first(land_use where (each.lu_code = lu_code));
+			loop year from: 1 to: data.columns - 1
+			{
+				add float(data[year, lu_row]) to: concerned.investment_map at: (year - 1) + 2005;
+			}
+
+		}
+
+		max_investment <- max(land_use accumulate (each.investment_map.values));
 	}
 
 	action load_transition
@@ -175,6 +232,8 @@ global
 	{
 		do load_land_use;
 		do load_price;
+		do load_investment;
+		do load_cost;
 		do load_transition;
 		do load_suitability;
 		do load_parcel;
@@ -252,7 +311,10 @@ species land_use
 	map<string, float> transition_map;
 	float risk;
 	float average_yield_ha;
+	float delay;
 	map<int, float> price_map;
+	map<int, float> cost_map;
+	map<int, float> investment_map;
 }
 
 species suitability_case
@@ -417,6 +479,23 @@ species farmer
 		int nb_similars <- neighborhood count (each.my_parcel.my_land_use = a_lu);
 		return nb_similars / length(neighborhood);
 	}
+	
+	float compute_investment (land_use a_lu)
+	{
+		float investment_of_product <- a_lu.investment_map[current_date.year];
+		return 1 - investment_of_product / max_investment;
+	}
+
+	float compute_cost (land_use a_lu)
+	{
+		float cost_of_product <- a_lu.cost_map[current_date.year];
+		return 1 - cost_of_product / max_cost;
+	}
+	
+	float compute_delay (land_use a_lu)
+	{
+		return 1 - a_lu.delay / max_delay;
+	}
 
 	list<list> land_use_eval (list<land_use> lus)
 	{
@@ -429,6 +508,9 @@ species farmer
 			cand << compute_implementation(lu);
 			cand << compute_suitability(lu);
 			cand << compute_neighborhood(lu);
+			cand << compute_investment(lu);
+			cand << compute_cost(lu);
+			cand << compute_delay(lu);
 			candidates << cand;
 		}
 
@@ -437,11 +519,13 @@ species farmer
 
 	action make_decision
 	{
-	//		if(flip(probability_changing)) {
-		list<list> cands <- land_use_eval(list(land_use));
-		int choice <- weighted_means_DM(cands, criteria);
-		my_parcel.my_land_use <- land_use[choice];
-		//		}
+		if (flip(probability_changing))
+		{
+			list<list> cands <- land_use_eval(list(land_use));
+			int choice <- weighted_means_DM(cands, criteria);
+			my_parcel.my_land_use <- land_use[choice];
+		}
+
 	}
 
 }
@@ -478,7 +562,7 @@ experiment display_map
 		//			species dike aspect: default;
 		//			species sluice aspect: default;
 		//		}
-		display landuse2010 background: # lightgray
+		display landuse2010 background: # lightgray type: opengl
 		{
 			image file("../images/background.png") refresh: false;
 			species parcel aspect: land_use2010;
