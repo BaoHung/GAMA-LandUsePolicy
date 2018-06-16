@@ -302,7 +302,7 @@ global
 		}
 
 	}
-
+	
 }
 
 species land_use
@@ -571,6 +571,25 @@ experiment display_map
 			species dike aspect: default;
 		}
 
+	}
+
+}
+
+experiment weight_exploration type: batch until: current_date.year = 2010 and current_date.month = 12 repeat: 1
+{
+	parameter "weight_investment" var: weight_investment min: 0.2 max: 0.8 step: 0.3;
+	parameter "weight_cost" var: weight_cost min: 0.2 max: 0.8 step: 0.3;
+	parameter "weight_delay" var: weight_delay min: 0.2 max: 0.8 step: 0.3;
+	method exhaustive;
+	
+	init
+	{
+		save ["weight_investment", "weight_cost", "weight_delay", "rate_same_landuse_2010"] to: "resVariance.csv" type: "csv" rewrite: true header: false;
+	}
+
+	reflex saver
+	{
+		save [weight_investment, weight_cost, weight_delay, parcel count(each.my_land_use.lu_code = each.lu_years[2010]) / length(parcel) ] to: "resVariance.csv" type: "csv" rewrite: false;
 	}
 
 }
