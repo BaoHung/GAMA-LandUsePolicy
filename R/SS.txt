@@ -1,0 +1,9 @@
+                                           Sum Sq
+weight_investment                            0.02
+weight_cost                                  1.44
+weight_delay                                61.76
+weight_investment:weight_cost                0.10
+weight_investment:weight_delay               1.00
+weight_cost:weight_delay                     0.46
+weight_investment:weight_cost:weight_delay   0.02
+Residuals                                   35.20
