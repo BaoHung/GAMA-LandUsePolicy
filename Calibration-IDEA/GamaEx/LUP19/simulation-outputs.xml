@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simulation id="" >
+	<Step id='0' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='1' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='2' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='3' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='4' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='5' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='6' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='7' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='8' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='9' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='10' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38285714285714284</Variable>
+
+	</Step>
+	<Step id='11' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='12' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='13' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='14' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='15' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='16' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='17' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='18' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='19' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='20' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='21' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='22' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38593406593406593</Variable>
+
+	</Step>
+	<Step id='23' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='24' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='25' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='26' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='27' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='28' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='29' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='30' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='31' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='32' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='33' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='34' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.3881318681318681</Variable>
+
+	</Step>
+	<Step id='35' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='36' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='37' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='38' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='39' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='40' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='41' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='42' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='43' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='44' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='45' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='46' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.39054945054945056</Variable>
+
+	</Step>
+	<Step id='47' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='48' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='49' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='50' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='51' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='52' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='53' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='54' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='55' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='56' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='57' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='58' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38945054945054947</Variable>
+
+	</Step>
+	<Step id='59' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='60' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='61' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='62' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='63' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='64' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='65' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='66' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='67' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='68' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='69' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+	<Step id='70' >
+		<Variable name='rate_same_landuse_2010' type='INT'>0.38505494505494503</Variable>
+
+	</Step>
+</Simulation>

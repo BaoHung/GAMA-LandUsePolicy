@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simulation id="" sourcePath="/media/bh/Linux Stuff/Dropbox/USTH/M1/MI2.05 - Complex system/Final Project/ProjectUSTH-LUP/models/Model_Complete.gaml" finalStep="200" until="current_date.year = 2010 and current_date.month = 12" experiment="lup_headless" >
+	<Parameters>
+		<Parameter var="weight_investment" type="FLOAT" value="0.8" />
+		<Parameter var="weight_cost" type="FLOAT" value="0.2" />
+		<Parameter var="weight_delay" type="FLOAT" value="0.5" />
+
+	</Parameters>
+	<Outputs>
+		<Output id="1" name="rate_same_landuse_2010" framerate="1" />
+
+	</Outputs>
+</Simulation>
