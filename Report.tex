@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[english]{babel}
+
+\title{%
+  Models to analyse land use policies in the Mekong Delta \\
+  \large Subject 1: Improving the realism of the individual economic choices}
+
+\author{NGUYEN Vu Bao Hung}
+\date{June 16, 2018}
+\lstset{breaklines=true} 
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+I chose the topic 1 which is to add the consideration of investment, cost and delay of each culture to the farmers' decisions. I then measure the rate of parcel that successfully reach the plan of 2010 to see if the new elements help steering farmers into the right track.
+
+\section{The model}
+I use cost.csv for the cost of change.\\
+I created investment.csv to store the investment required in the change of culture.\\
+I added a delay column in the lut.csv file to store the delay required of each culture.\\
+After that, in the model, I added weight parameter, criteria element, and calculation method for each of the 3 new elements.
+
+\section{The Experiment Plan and Exploration}
+With the exhaustive method, the experiment has 3 parameters which are the weights of the new elements (cost, investment and delay)\\
+They range from 0.2 to 0.8 with the step of 0.3, it results in 27 runs of simulation.\\
+I measure the percentage of parcel that has "land use" the same as the 2010 plan.\\
+The results are stored in a csv file for latter analysis.
+
+\section{Data analysis}
+By using R, I have computed the Sum Square of each weight and its ratio on the effect of farmers making the right decisions.\\
+The result shows that the weight of delay takes more than 60\% of the effect on the result. It is the most important parameter.\\
+Meanwhile, due to stochasticity, the residual is quite high 35\% which indicates that the model is not very stable.
+
+\section{Calibration}
+The calibration was implemented in an IDEA project. It calls the headless mode of GAMA and gets the result of simulation in a series of xml files.
+
+\end{document}
